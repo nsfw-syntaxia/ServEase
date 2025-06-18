@@ -110,6 +110,8 @@
   	font-size: var(--font-size-16);
   	letter-spacing: 0.02em;
   	font-weight: 300;
+  	white-space: nowrap;
+  	width: 100%;
 }
 
 .service1 {
@@ -237,11 +239,6 @@
   	font-family: var(--font-poppins);
 }
 
-.signUp1 {
-  	position: relative;
-  	font-weight: 500;
-}
-
 .buttontext {
   	position: absolute;
   	top: calc(50% - 15px);
@@ -301,35 +298,39 @@
   	width: 32px;
   	height: 32px;
   	overflow: hidden;
-}
-
-.authlogoIcon {
-  	position: absolute;
-  	top: 23px;
-  	left: 0px;
-  	width: 832px;
-  	height: 978px;
-  	object-fit: cover;
+	cursor: pointer;
 }
 
 .signup1 {
-  	position: absolute;
-  	top: 0px;
-  	left: -128px;
+	display: flex;
+  	position: relative;
+  	top: -40px;
+  	left: 175px;
   	width: 1568px;
   	height: 1024px;
 }
 
 .signup {
+	display: flex;
   	width: 100%;
   	position: relative;
-  	background-color: var(--color-white);
-  	border: 1px solid var(--color-black);
+  	background-color: #f9f7f4;
   	box-sizing: border-box;
-  	height: 1024px;
+  	height: 100vh;
   	overflow: hidden;
   	text-align: center;
   	font-size: var(--font-size-18);
   	color: var(--color-white);
   	font-family: var(--font-dm-sans);
+}
+
+.authlogoIcon {
+  position: absolute;
+  left: -160px;
+  top: 525px;
+  transform: translateY(-50%);
+  height: 1050px;
+  width: 1050px;
+  object-fit: contain;
+  z-index: 1;
 }

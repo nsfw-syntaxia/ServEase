@@ -66,7 +66,7 @@ const Signup:NextPage = () => {
           					</div>
         				</div>
         				<Image className={styles.closeIcon} width={32} height={32} sizes="100vw" alt="" src="/close.svg" />
-        				<Image className={styles.authlogoIcon} width={832} height={978} sizes="100vw" alt="" src="/authLogo.png" />
+        				<Image className={styles.authlogoIcon} width={832} height={978} sizes="100vw" alt="" src="/authLogo.svg" />
       			</div>
     		</div>);
 };
