@@ -9,9 +9,19 @@ const Signup: NextPage = () => {
   const [selectedUserType, setSelectedUserType] = useState<
     "client" | "service" | null
   >(null);
+  const [hoveredUserType, setHoveredUserType] = useState<
+    "client" | "service" | null
+  >(null);
 
   const handleSelect = (type: "client" | "service") => {
     setSelectedUserType(type);
+  };
+
+  const showHover = (type: "client" | "service") => {
+    return (
+      selectedUserType === type ||
+      (selectedUserType === null && hoveredUserType === type)
+    );
   };
 
   return (
@@ -46,8 +56,14 @@ const Signup: NextPage = () => {
                 <div
                   className={styles.service}
                   onClick={() => handleSelect("service")}
+                  onMouseEnter={() =>
+                    selectedUserType === null && setHoveredUserType("service")
+                  }
+                  onMouseLeave={() => {
+                    if (selectedUserType === null) setHoveredUserType(null);
+                  }}
                 >
-                  {selectedUserType === "service" && (
+                  {showHover("service") && (
                     <div className={styles.hoverselect}>
                       <div className={styles.hoverselectcircle}></div>
                       <Image
@@ -100,8 +116,14 @@ const Signup: NextPage = () => {
                 <div
                   className={styles.client}
                   onClick={() => handleSelect("client")}
+                  onMouseEnter={() =>
+                    selectedUserType === null && setHoveredUserType("client")
+                  }
+                  onMouseLeave={() => {
+                    if (selectedUserType === null) setHoveredUserType(null);
+                  }}
                 >
-                  {selectedUserType === "client" && (
+                  {showHover("client") && (
                     <div className={styles.hoverselect}>
                       <div className={styles.hoverselectcircle}></div>
                       <Image
