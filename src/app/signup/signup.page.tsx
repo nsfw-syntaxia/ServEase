@@ -1,0 +1,74 @@
+import type { NextPage } from 'next';
+import Image from "next/image";
+import styles from '../../styles/signup.module.css';
+
+const Signup:NextPage = () => {
+  	return (
+    		<div className={styles.signup}>
+      			<div className={styles.signup1}>
+        				<div className={styles.background} />
+        				<div className={styles.authwindow}>
+          					<div className={styles.authwindow1} />
+          					<div className={styles.authcontent}>
+            						<div className={styles.signupcontent}>
+              							<div className={styles.navigationbar}>
+                								<div className={styles.navbar}>
+                  									<div className={styles.login}>
+                    										<div className={styles.logIn}>Log In</div>
+                  									</div>
+                  									<div className={styles.signup2}>
+                    										<div className={styles.signUp}>Sign Up</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div className={styles.title}>
+                								<div className={styles.welcomeToServeaseContainer}>
+                  									<span>Welcome to serv</span>
+                  									<b>ease</b>
+                  									<span>!</span>
+                								</div>
+                								<div className={styles.createYourAccount}>Create your account to get started now.</div>
+              							</div>
+              							<div className={styles.usertype}>
+                								<div className={styles.service}>
+                  									<div className={styles.service1}>
+                    										<div className={styles.serviceProvider}>Service Provider</div>
+                    										<div className={styles.imRunningA}>I’m running a service-based business</div>
+                  									</div>
+                  									<Image className={styles.service3Icon} width={35} height={35} sizes="100vw" alt="" src="/service 3.svg" />
+                  									<Image className={styles.service2Icon} width={35} height={35} sizes="100vw" alt="" src="/service 2.svg" />
+                  									<Image className={styles.service1Icon} width={45} height={45} sizes="100vw" alt="" src="/service 1.svg" />
+                  									<div className={styles.notselected}>
+                    										<div className={styles.notselected1} />
+                    										<div className={styles.notselected2} />
+                  									</div>
+                								</div>
+                								<div className={styles.notselected}>
+                  									<div className={styles.notselected}>
+                    										<div className={styles.notselected1} />
+                    										<div className={styles.notselected5} />
+                  									</div>
+                  									<div className={styles.client1}>
+                    										<div className={styles.serviceProvider}>Client</div>
+                    										<div className={styles.imRunningA}>I’m looking for trusted service providers</div>
+                  									</div>
+                  									<Image className={styles.client3Icon} width={35} height={35} sizes="100vw" alt="" src="/client 3.svg" />
+                  									<Image className={styles.service2Icon} width={35} height={35} sizes="100vw" alt="" src="/client 2.svg" />
+                  									<Image className={styles.client1Icon} width={45} height={45} sizes="100vw" alt="" src="/client 1.svg" />
+                								</div>
+              							</div>
+              							<div className={styles.buttoncontainer}>
+                								<div className={styles.buttontext}>
+                  									<div className={styles.signUp1}>Create My Account</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+        				<Image className={styles.closeIcon} width={32} height={32} sizes="100vw" alt="" src="/close.svg" />
+        				<Image className={styles.authlogoIcon} width={832} height={978} sizes="100vw" alt="" src="/authLogo.png" />
+      			</div>
+    		</div>);
+};
+
+export default Signup;
