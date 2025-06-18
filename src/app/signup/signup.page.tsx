@@ -1,8 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../../styles/signup.module.css";
 
 const Signup: NextPage = () => {
+  const [selectedUserType, setSelectedUserType] = useState<
+    "client" | "service" | null
+  >(null);
+
+  const handleSelect = (type: "client" | "service") => {
+    setSelectedUserType(type);
+  };
+
   return (
     <div className={styles.signup}>
       <div className={styles.signup1}>
@@ -32,7 +43,22 @@ const Signup: NextPage = () => {
                 </div>
               </div>
               <div className={styles.usertype}>
-                <div className={styles.service}>
+                <div
+                  className={styles.service}
+                  onClick={() => handleSelect("service")}
+                >
+                  {selectedUserType === "service" && (
+                    <div className={styles.hoverselect}>
+                      <div className={styles.hoverselectcircle}></div>
+                      <Image
+                        className={styles.hovercheckIcon}
+                        src="/check.svg"
+                        width={15}
+                        height={11}
+                        alt=""
+                      />
+                    </div>
+                  )}
                   <div className={styles.service1}>
                     <div className={styles.serviceProvider}>
                       Service Provider
@@ -70,7 +96,23 @@ const Signup: NextPage = () => {
                     <div className={styles.notselected2} />
                   </div>
                 </div>
-                <div className={styles.client}>
+
+                <div
+                  className={styles.client}
+                  onClick={() => handleSelect("client")}
+                >
+                  {selectedUserType === "client" && (
+                    <div className={styles.hoverselect}>
+                      <div className={styles.hoverselectcircle}></div>
+                      <Image
+                        className={styles.hovercheckIcon}
+                        src="/check.svg"
+                        width={15}
+                        height={11}
+                        alt=""
+                      />
+                    </div>
+                  )}
                   <div className={styles.notselected}>
                     <div className={styles.notselected1} />
                     <div className={styles.notselected5} />
