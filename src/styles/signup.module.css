@@ -1,3 +1,7 @@
+.body {
+  cursor: default;
+}
+
 .background {
   position: absolute;
   top: 0px;
@@ -334,6 +338,7 @@
   font-size: var(--font-size-18);
   color: var(--color-white);
   font-family: var(--font-dm-sans);
+  cursor: default;
 }
 
 .authlogoIcon {
