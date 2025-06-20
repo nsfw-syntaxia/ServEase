@@ -35,3 +35,11 @@ body {
   --font-size-18: 18px;
   --font-size-20: 20px;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-clear-button {
+  display: none !important;
+  appearance: none !important;
+}
