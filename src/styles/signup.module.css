@@ -252,7 +252,7 @@
   text-align: left;
   font-size: var(--font-size-20);
   color: var(--color-gray-100);
-  font-family: var(--font-poppins);
+  font-family: var(--font-dm-sans);
 }
 
 .buttontext {
@@ -413,11 +413,11 @@
   background-color: #ffe6e6;
   border: 1px solid #ff4d4f;
   border-radius: 12px;
-  padding: 12px;
+  padding: 8px;
   text-align: center;
   color: #d8000c;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
