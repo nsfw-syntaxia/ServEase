@@ -127,7 +127,7 @@ const Login: NextPage = () => {
                         alt={
                           passwordVisible ? "Hide password" : "Show password"
                         }
-                        src={passwordVisible ? "show.svg" : "hide.svg"}
+                        src={passwordVisible ? "/show.svg" : "/hide.svg"}
                         onClick={togglePasswordVisibility}
                       />
                     </div>
@@ -152,7 +152,7 @@ const Login: NextPage = () => {
                               width={14}
                               height={14}
                               alt="check"
-                              src="check.svg"
+                              src="/check.svg"
                             />
                           )}
                         </div>

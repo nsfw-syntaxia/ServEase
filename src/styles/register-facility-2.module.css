@@ -1,75 +1,22 @@
-.serveaseLogoAlbumCover3 {
+.regislogoIcon {
   position: absolute;
-  top: 17px;
-  left: 700px;
+  top: calc(50% - 19.5px);
+  left: calc(50% - 20px);
   width: 40px;
   height: 40px;
   object-fit: cover;
 }
 
-.home {
-  position: relative;
-  font-weight: 500;
-  color: var(--color-gray-100);
-}
-
-.webDesigns {
-  position: relative;
-}
-
-.links {
-  position: absolute;
-  top: calc(50% - 7.5px);
-  left: 120px;
-  display: none;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: 40px;
-}
-
-.dropdown {
-  width: 214px;
-  height: 24px;
-  display: none;
-}
-
-.button {
-  width: 98px;
-  position: relative;
-  border-radius: var(--br-8);
-  background-color: var(--color-gray-100);
-  border: 1px solid var(--color-gray-100);
-  box-sizing: border-box;
-  height: 40px;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: none;
-}
-
-.loginSignUp {
-  position: absolute;
-  top: calc(50% - 19.5px);
-  right: 40px;
-  width: 442px;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-16);
-}
-
 .divider {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  top: calc(50% + 35.5px);
+  left: calc(50% - 720px);
   background-color: var(--color-dimgray-300);
   width: 1440px;
   height: 1px;
 }
 
-.outlineArrowsArrowLeft {
+.arrowIcon {
   position: absolute;
   top: 25px;
   left: 49px;
@@ -83,11 +30,9 @@
   top: 25px;
   left: 83px;
   font-weight: 500;
-  color: var(--color-dimgray-200);
-  text-align: center;
 }
 
-.headerNav {
+.header {
   align-self: stretch;
   position: relative;
   background-color: var(--color-white);
@@ -96,7 +41,7 @@
   flex-shrink: 0;
 }
 
-.joinUs1 {
+.joinUs {
   position: relative;
   line-height: 68px;
   font-weight: 500;
@@ -110,11 +55,11 @@
   display: inline-block;
 }
 
-.joinUsParent {
+.title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 2px;
   font-size: 40px;
   color: var(--color-gray-100);
@@ -142,20 +87,20 @@
   height: 12.2px;
 }
 
-.bgParent {
+.number {
   width: 20px;
   position: relative;
   height: 20px;
 }
 
-.profile {
+.profile1 {
   position: relative;
   font-size: var(--font-size-16);
   font-weight: 300;
-  color: var(--color-dimgray-200);
+  color: var(--color-dimgray-500);
 }
 
-.groupParent {
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,7 +109,7 @@
   opacity: 0.35;
 }
 
-.stepperChild {
+.line {
   width: 150px;
   position: relative;
   background-color: var(--color-tan);
@@ -173,7 +118,7 @@
   margin-left: -15px;
 }
 
-.groupContainer {
+.documents {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,7 +128,7 @@
   position: relative;
 }
 
-.frameDiv {
+.contacts {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,7 +139,7 @@
   position: relative;
 }
 
-.groupParent1 {
+.login {
   width: 69px;
   display: flex;
   flex-direction: column;
@@ -206,7 +151,7 @@
   position: relative;
 }
 
-.stepper {
+.nav {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -235,7 +180,7 @@
   height: 14.7px;
 }
 
-.number {
+.profileTitle {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -243,7 +188,7 @@
   gap: var(--gap-12);
 }
 
-.numberWrapper {
+.profileContent {
   width: 611px;
   display: flex;
   flex-direction: column;
@@ -251,7 +196,7 @@
   justify-content: center;
 }
 
-.frameContainer {
+.profileDescrip {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -259,17 +204,7 @@
   opacity: 0.5;
 }
 
-.frameWrapper {
-  border-radius: var(--br-24);
-  background-color: var(--color-white);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-24);
-}
-
-.number1 {
+.documentsTitle {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -294,7 +229,7 @@
   display: inline-block;
 }
 
-.numberParent {
+.documentsDescrip1 {
   width: 611px;
   display: flex;
   flex-direction: column;
@@ -303,32 +238,15 @@
   gap: var(--gap-8);
 }
 
-.frameWrapper1 {
+.documentsDescrip {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-.imagePlusIcon {
-  width: 46px;
+.uploadFilesText {
   position: relative;
-  height: 46px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.uploadPhoto {
-  position: relative;
-  line-height: 20px;
-}
-
-.imagePlusParent {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-8);
 }
 
 .fileAddIcon {
@@ -345,7 +263,7 @@
   opacity: 0.5;
 }
 
-.fileAddParent {
+.upload {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -353,7 +271,7 @@
   gap: var(--gap-10);
 }
 
-.uplodPhoto {
+.uploadPhoto {
   align-self: stretch;
   border-radius: var(--br-12);
   background-color: var(--color-whitesmoke-200);
@@ -366,7 +284,6 @@
   justify-content: center;
   padding: 20px 132px;
   box-sizing: border-box;
-  gap: var(--gap-16);
 }
 
 .pdf1 {
@@ -394,7 +311,7 @@
   padding: var(--padding-4) var(--padding-8);
 }
 
-.pdfParent {
+.documentsType {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -403,23 +320,7 @@
   font-size: var(--font-size-12);
 }
 
-.uploadPhotosChild {
-  width: 512px;
-  position: relative;
-  border-radius: var(--br-8);
-  background-color: var(--color-black);
-  height: 146px;
-  display: none;
-  opacity: 0.2;
-}
-
-.upload {
-  position: relative;
-  font-weight: 500;
-  color: var(--color-tan);
-}
-
-.businessRegistrationParent {
+.document1 {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -428,13 +329,13 @@
   gap: var(--gap-8);
 }
 
-.elementsIcon {
+.docuncheckedIcon {
   width: 24px;
   position: relative;
   height: 24px;
 }
 
-.frameParent1 {
+.businessRegis {
   align-self: stretch;
   border-radius: var(--br-12);
   background-color: var(--color-snow);
@@ -446,7 +347,13 @@
   gap: var(--gap-16);
 }
 
-.uploadPhotos {
+.uploadComplete {
+  position: relative;
+  font-weight: 500;
+  color: var(--color-tan);
+}
+
+.uploadFiles {
   width: 589px;
   display: flex;
   flex-direction: column;
@@ -457,7 +364,7 @@
   color: var(--color-gray-400);
 }
 
-.signUpWrapper {
+.next {
   position: absolute;
   top: calc(50% - 15px);
   left: calc(50% - 23px);
@@ -467,7 +374,7 @@
   justify-content: center;
 }
 
-.button2 {
+.button {
   width: 611px;
   position: relative;
   border-radius: 32px;
@@ -480,14 +387,16 @@
   font-size: 22px;
 }
 
-.frameGroup {
+.documents2 {
   border-radius: var(--br-24);
   background-color: var(--color-white);
+  height: 1079px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-24);
+  box-sizing: border-box;
   gap: 19px;
   text-align: left;
   font-size: var(--font-size-16);
@@ -499,8 +408,19 @@
   color: var(--color-darkslategray);
 }
 
-.frameParent {
-  height: 1174px;
+.contactInfo {
+  border-radius: var(--br-24);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-24);
+}
+
+.navcontents {
+  align-self: stretch;
+  height: 1182px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -508,26 +428,25 @@
   gap: 24px;
 }
 
-.conten {
+.content {
   position: absolute;
-  top: 56px;
-  left: 390px;
-  height: 1492px;
+  top: calc(50% - 802px);
+  left: calc(50% - 330px);
+  width: 659px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 56px;
 }
 
-.joinUs {
+.register {
   align-self: stretch;
   position: relative;
   background-color: var(--color-whitesmoke-100);
   height: 1716px;
   overflow: hidden;
   flex-shrink: 0;
-  text-align: center;
   font-size: var(--font-size-12);
   color: var(--color-white);
   font-family: var(--font-dm-sans);
@@ -537,15 +456,13 @@
   width: 100%;
   position: relative;
   background-color: var(--color-white);
-  border: 1px solid var(--color-black);
-  box-sizing: border-box;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  text-align: left;
+  text-align: center;
   font-size: var(--font-size-16);
-  color: var(--color-dimgray-400);
+  color: var(--color-dimgray-500);
   font-family: var(--font-poppins);
 }

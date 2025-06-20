@@ -23,6 +23,7 @@ body {
   --color-dimgray-200: rgba(102, 102, 102, 0.35);
   --color-dimgray-300: rgba(102, 102, 102, 0.25);
   --color-dimgray-400: rgba(102, 102, 102, 0.8);
+  --color-dimgray-500: #604c3d;
   --color-gray-100: #111;
   --color-gray-200: #050f1a;
   --color-gray-300: rgba(34, 34, 34, 0.1);
@@ -36,6 +37,10 @@ body {
   --gap-10: 10px;
   --gap-12: 12px;
   --gap-16: 16px;
+
+  --padding-4: 4px;
+  --padding-8: 8px;
+  --padding-16: 16px;
   --padding-24: 24px;
 
   --br-6: 6px;
