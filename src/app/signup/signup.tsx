@@ -14,6 +14,7 @@ const Signup: NextPage = () => {
     "client" | "service" | null
   >(null);
   const [showError, setShowError] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
 
   const handleSelect = (type: "client" | "service") => {
@@ -22,11 +23,15 @@ const Signup: NextPage = () => {
   };
 
   const handleClick = () => {
-    if (!selectedUserType) {
-      setShowError(true);
-    } else {
-      router.push("/login");
-    }
+    setIsClicked(true); // Trigger animation
+    setTimeout(() => {
+      setIsClicked(false);
+      if (!selectedUserType) {
+        setShowError(true);
+      } else {
+        router.push("/login");
+      }
+    }, 200); // Match animation duration
   };
 
   const showHover = (type: "client" | "service") => {
@@ -195,9 +200,9 @@ const Signup: NextPage = () => {
                   Please select a user type before continuing.
                 </div>
                 <div
-                  className={`${styles.buttoncontainer} ${
-                    selectedUserType ? styles.buttoncontainerActive : ""
-                  }`}
+                  className={`${styles.buttoncontainer} 
+                    ${selectedUserType ? styles.buttoncontainerActive : ""} 
+                    ${isClicked ? styles.clicked : ""}`}
                   onClick={handleClick}
                 >
                   <div className={styles.buttontext}>
