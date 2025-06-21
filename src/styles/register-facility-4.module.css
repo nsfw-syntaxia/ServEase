@@ -353,17 +353,17 @@
 }
 
 .tbxValid {
-  border-color: #52c41a !important;
-  background-color: #f6ffed !important;
+  border-color: var(--color-tan) !important;
+  background-color: #fdf8f4 !important;
 }
 
 .tbxValid:hover {
-  border-color: #52c41a !important;
+  border-color: var(--color-tan) !important;
 }
 
 .tbxValid:focus-within {
-  border-color: #52c41a !important;
-  box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.2);
+  border-color: var(--color-tan) !important;
+  box-shadow: 0 0 0 2px rgba(166, 115, 73, 0.3);
 }
 
 .tbxError {
