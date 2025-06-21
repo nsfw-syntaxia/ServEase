@@ -166,7 +166,7 @@ const FacilitySignup2: NextPage = () => {
                     eligibility.
                   </div>
                   <div className={styles.allFieldsRequired}>
-                    All fields required unless noted.
+                    *All fields required unless noted.
                   </div>
                 </div>
               </div>
