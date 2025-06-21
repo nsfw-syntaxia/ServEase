@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import type { NextPage } from "next";
 import Image from "next/image";
@@ -14,7 +14,55 @@ const Login: NextPage = () => {
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({
+    email: false,
+    password: false,
+  });
+  const [fieldTouched, setFieldTouched] = useState({
+    email: false,
+    password: false,
+  });
   const router = useRouter();
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  useEffect(() => {
+    const newValidation = {
+      email: email.length > 0 && validateEmail(email),
+      password: password.length > 0,
+    };
+
+    if (showError) {
+      const newFieldErrors = { ...fieldErrors };
+      let errorCleared = false;
+
+      if (fieldErrors.email && newValidation.email) {
+        newFieldErrors.email = false;
+        errorCleared = true;
+      }
+
+      if (fieldErrors.password && newValidation.password) {
+        newFieldErrors.password = false;
+        errorCleared = true;
+      }
+
+      if (errorCleared) {
+        setFieldErrors(newFieldErrors);
+      }
+
+      if (newValidation.email && newValidation.password) {
+        setError("");
+        setShowError(false);
+        setFieldErrors({
+          email: false,
+          password: false,
+        });
+      }
+    }
+  }, [email, password, showError, fieldErrors]);
 
   const toggleRememberMe = () => {
     setRememberMeChecked(!rememberMeChecked);
@@ -24,9 +72,35 @@ const Login: NextPage = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    if (!fieldTouched.email) {
+      setFieldTouched((prev) => ({ ...prev, email: true }));
+    }
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+    if (!fieldTouched.password) {
+      setFieldTouched((prev) => ({ ...prev, password: true }));
+    }
+  };
+
+  const getInputClassName = (
+    fieldName: keyof typeof fieldErrors,
+    value: string
+  ) => {
+    let className = `${styles.tbx} ${styles.inputBox}`;
+
+    if (value) {
+      className += ` ${styles.tbxFilled}`;
+    }
+
+    if (fieldErrors[fieldName]) {
+      className += ` ${styles.tbxError}`;
+    }
+
+    return className;
   };
 
   const handleLogin = () => {
@@ -35,18 +109,49 @@ const Login: NextPage = () => {
     setTimeout(() => {
       setIsClicked(false);
 
+      setFieldTouched({
+        email: true,
+        password: true,
+      });
+
+      setFieldErrors({
+        email: false,
+        password: false,
+      });
+
+      let hasError = false;
+      let errorMessage = "";
+      const newFieldErrors = {
+        email: false,
+        password: false,
+      };
+
       if (!email || !password) {
-        setError("Please fill in all required fields.");
-        setShowError(true);
+        errorMessage = "Please fill in all required fields.";
+        hasError = true;
+        if (!email) newFieldErrors.email = true;
+        if (!password) newFieldErrors.password = true;
       } else if (!validateEmail(email)) {
-        setError("Please enter a valid email address.");
-        setShowError(true);
-      } else {
-        setError("");
-        setShowError(false);
-        console.log("Logging in with:", { email, password, rememberMeChecked });
-        router.push("/signup");
+        errorMessage = "Please enter a valid email address.";
+        hasError = true;
+        newFieldErrors.email = true;
       }
+
+      if (hasError) {
+        setError(errorMessage);
+        setShowError(true);
+        setFieldErrors(newFieldErrors);
+        return;
+      }
+
+      setError("");
+      setShowError(false);
+      setFieldErrors({
+        email: false,
+        password: false,
+      });
+      console.log("Logging in with:", { email, password, rememberMeChecked });
+      router.push("/signup");
     }, 200);
   };
 
@@ -87,15 +192,12 @@ const Login: NextPage = () => {
                     <div className={styles.emailAddress}>
                       <div className={styles.label}>Email address</div>
                     </div>
-                    <div
-                      className={`${styles.tbx} ${styles.inputBox} ${
-                        email ? styles.tbxFilled : ""
-                      }`}
-                    >
+                    <div className={getInputClassName("email", email)}>
                       <input
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleEmailChange}
+                        placeholder="Enter your email address"
                         className={styles.passwordInput}
                       />
                     </div>
@@ -106,15 +208,12 @@ const Login: NextPage = () => {
                     <div className={styles.emailAddress}>
                       <div className={styles.label}>Password</div>
                     </div>
-                    <div
-                      className={`${styles.tbx} ${styles.inputBox} ${
-                        password ? styles.tbxFilled : ""
-                      }`}
-                    >
+                    <div className={getInputClassName("password", password)}>
                       <input
                         type={passwordVisible ? "text" : "password"}
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={handlePasswordChange}
+                        placeholder="Enter your password"
                         className={styles.passwordInput}
                       />
                       <Image
