@@ -8,9 +8,9 @@ import styles from "../../styles/login.module.css";
 
 const Login: NextPage = () => {
   const [rememberMeChecked, setRememberMeChecked] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
@@ -71,7 +71,6 @@ const Login: NextPage = () => {
                   </div>
                 </div>
               </div>
-
               <div className={styles.title}>
                 <div className={styles.welcomeToServeaseContainer}>
                   <span>Welcome to serv</span>
@@ -82,7 +81,6 @@ const Login: NextPage = () => {
                   Please log in to access your account.
                 </div>
               </div>
-
               <div className={styles.userinputs}>
                 <div className={styles.email}>
                   <div className={styles.email1}>
@@ -103,7 +101,6 @@ const Login: NextPage = () => {
                     </div>
                   </div>
                 </div>
-
                 <div className={styles.password}>
                   <div className={styles.password1}>
                     <div className={styles.emailAddress}>
