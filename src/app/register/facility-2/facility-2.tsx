@@ -277,7 +277,7 @@ const FacilitySignup2: NextPage = () => {
                   }`}
                 >
                   <div className={styles.errorMessage}>
-                    Please upload all required documents before continuing.
+                    Please upload all required documents.
                   </div>
                 </div>
                 <div

@@ -371,7 +371,7 @@
 
 .selected {
   background-color: #eee4df !important;
-  border: 1.75px solid #bfa8a1;
+  border: 1px solid #bfa8a1;
   pointer-events: none;
 }
 

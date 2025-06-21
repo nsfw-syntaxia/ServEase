@@ -110,6 +110,13 @@ const Signup: NextPage = () => {
                     sizes="100vw"
                     alt=""
                     src="/service 3.svg"
+                    onMouseEnter={() =>
+                      selectedUserType === null && setHoveredUserType("service")
+                    }
+                    onMouseLeave={() =>
+                      selectedUserType === null && setHoveredUserType(null)
+                    }
+                    onClick={() => handleSelect("service")}
                   />
                   <Image
                     className={styles.service2Icon}
@@ -118,6 +125,13 @@ const Signup: NextPage = () => {
                     sizes="100vw"
                     alt=""
                     src="/service 2.svg"
+                    onMouseEnter={() =>
+                      selectedUserType === null && setHoveredUserType("service")
+                    }
+                    onMouseLeave={() =>
+                      selectedUserType === null && setHoveredUserType(null)
+                    }
+                    onClick={() => handleSelect("service")}
                   />
                   <Image
                     className={styles.service1Icon}
@@ -126,6 +140,13 @@ const Signup: NextPage = () => {
                     sizes="100vw"
                     alt=""
                     src="/service 1.svg"
+                    onMouseEnter={() =>
+                      selectedUserType === null && setHoveredUserType("service")
+                    }
+                    onMouseLeave={() =>
+                      selectedUserType === null && setHoveredUserType(null)
+                    }
+                    onClick={() => handleSelect("service")}
                   />
                   <div className={styles.notselected}>
                     <div className={styles.notselected1} />
@@ -172,14 +193,28 @@ const Signup: NextPage = () => {
                     sizes="100vw"
                     alt=""
                     src="/client 3.svg"
+                    onMouseEnter={() =>
+                      selectedUserType === null && setHoveredUserType("client")
+                    }
+                    onMouseLeave={() =>
+                      selectedUserType === null && setHoveredUserType(null)
+                    }
+                    onClick={() => handleSelect("client")}
                   />
                   <Image
-                    className={styles.service2Icon}
+                    className={styles.client2Icon}
                     width={35}
                     height={35}
                     sizes="100vw"
                     alt=""
                     src="/client 2.svg"
+                    onMouseEnter={() =>
+                      selectedUserType === null && setHoveredUserType("client")
+                    }
+                    onMouseLeave={() =>
+                      selectedUserType === null && setHoveredUserType(null)
+                    }
+                    onClick={() => handleSelect("client")}
                   />
                   <Image
                     className={styles.client1Icon}
@@ -188,6 +223,13 @@ const Signup: NextPage = () => {
                     sizes="100vw"
                     alt=""
                     src="/client 1.svg"
+                    onMouseEnter={() =>
+                      selectedUserType === null && setHoveredUserType("client")
+                    }
+                    onMouseLeave={() =>
+                      selectedUserType === null && setHoveredUserType(null)
+                    }
+                    onClick={() => handleSelect("client")}
                   />
                 </div>
               </div>
